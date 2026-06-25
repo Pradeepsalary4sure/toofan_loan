@@ -50,9 +50,9 @@ h1 {
   margin-bottom: 18px;
   background: linear-gradient(
   90deg,
-  #001f5b,
-  #003b8e,
-  #0066ff
+  #B8860B,
+  #FFD700,
+  #FFEC8B
 );
   background-clip: text;
   -webkit-background-clip: text;
@@ -61,7 +61,7 @@ h1 {
 
 p {
   font-size: 28px;
-  color: #d8d8d8;
+  color: #000000;
   margin-bottom: 34px;
 }
 
@@ -192,7 +192,7 @@ p {
   line-height: 1.05;
   margin-bottom: 10px;
   letter-spacing: 1.4px;
-  color: #ffffff;
+  color: #FFD700;
   text-shadow: 0 14px 30px rgba(106, 170, 255, 0.25);
   font-weight: 900;
 }
@@ -313,7 +313,7 @@ p {
 }
 
 .updated-info {
-  color: #e0e7ff;
+  color: #999a9e;
   font-size: 13px;
   font-weight: 600;
   text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
