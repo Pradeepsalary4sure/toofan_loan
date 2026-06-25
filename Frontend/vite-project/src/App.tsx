@@ -1,3 +1,4 @@
+
 // import "./App.css";
 // import heroImage from "./assets/image.png";
 // import bankLogo from "./assets/image.png";
@@ -11,8 +12,8 @@
 
 // const MIN_DISBURSE_DATE = "2025-10-25";
 // const MAX_DISBURSE_DATE = "2030-12-31";
-// const FRESH_TARGET = 10.5 * 10000000;
-// const REPEAT_TARGET = 10.5 * 10000000;
+// const FRESH_TARGET = 11 * 10000000;
+// const REPEAT_TARGET = 11 * 10000000;
 
 // interface Data {
 //   name: string;
@@ -167,9 +168,9 @@
 //   reportData.push([]);
 
 //   reportData.push(["OVERALL AMOUNT SUMMARY"]);
-//   reportData.push(["Total Amount", `₹ ${overallAmount.toLocaleString()}`]);
-//   reportData.push(["Total Repay Amount", `₹ ${overallRepayAmount.toLocaleString()}`]);
-//   reportData.push(["Total Received Amount", `₹ ${overallReceivedAmount.toLocaleString()}`]);
+//   reportData.push(["Total Amount", overallAmount.toLocaleString()]);
+//   reportData.push(["Total Repay Amount", overallRepayAmount.toLocaleString()]);
+//   reportData.push(["Total Received Amount", overallReceivedAmount.toLocaleString()]);
 //   reportData.push(["Overall Received %", `${overallReceivedPercent.toFixed(2)}%`]);
 //   reportData.push([]);
 //   reportData.push([]);
@@ -182,9 +183,9 @@
 //         idx + 1,
 //         item.name,
 //         item.cases,
-//         `₹ ${item.amount.toLocaleString()}`,
-//         `₹ ${item.repayAmount.toLocaleString()}`,
-//         `₹ ${item.receivedAmount.toLocaleString()}`,
+//         item.amount.toLocaleString(),
+//         item.repayAmount.toLocaleString(),
+//         item.receivedAmount.toLocaleString(),
 //         `${item.receivePercent.toFixed(2)}%`
 //       ]);
 //     });
@@ -200,9 +201,9 @@
 //         idx + 1,
 //         item.name,
 //         item.cases,
-//         `₹ ${item.amount.toLocaleString()}`,
-//         `₹ ${item.repayAmount.toLocaleString()}`,
-//         `₹ ${item.receivedAmount.toLocaleString()}`,
+//         item.amount.toLocaleString(),
+//         item.repayAmount.toLocaleString(),
+//         item.receivedAmount.toLocaleString(),
 //         `${item.receivePercent.toFixed(2)}%`
 //       ]);
 //     });
@@ -258,9 +259,9 @@
 //   incentiveData.push(["INCENTIVE ELIGIBLE SUMMARY"]);
 //   incentiveData.push(["Total Eligible Executives", totalEligible]);
 //   incentiveData.push(["Total Cases", totalCases]);
-//   incentiveData.push(["Total Amount", `₹ ${totalAmount.toLocaleString()}`]);
-//   incentiveData.push(["Total Repay Amount", `₹ ${totalRepay.toLocaleString()}`]);
-//   incentiveData.push(["Total Received Amount", `₹ ${totalReceived.toLocaleString()}`]);
+//   incentiveData.push(["Total Amount", totalAmount.toLocaleString()]);
+//   incentiveData.push(["Total Repay Amount", totalRepay.toLocaleString()]);
+//   incentiveData.push(["Total Received Amount", totalReceived.toLocaleString()]);
 //   incentiveData.push(["Average Received %", `${avgPercent.toFixed(2)}%`]);
 //   incentiveData.push([]);
 //   incentiveData.push([]);
@@ -276,9 +277,9 @@
 //         idx + 1,
 //         item.name,
 //         item.cases,
-//         `₹ ${item.amount.toLocaleString()}`,
-//         `₹ ${item.repayAmount.toLocaleString()}`,
-//         `₹ ${item.receivedAmount.toLocaleString()}`,
+//         item.amount.toLocaleString(),
+//         item.repayAmount.toLocaleString(),
+//         item.receivedAmount.toLocaleString(),
 //         `${item.receivePercent.toFixed(2)}%`,
 //         type,
 //         "YES ✓"
@@ -769,6 +770,9 @@
 // }
 
 // export default App;
+
+
+
 
 import "./App.css";
 import heroImage from "./assets/image.png";
@@ -1419,6 +1423,33 @@ const renderTargetCard = () => (
         </div>
       </section>
 
+      {/* KPI SUMMARY CARDS - Key Metrics at a Glance */}
+      <div className="kpi-container">
+        <div className="kpi-card">
+          <div className="kpi-label">Fresh Cases</div>
+          <div className="kpi-value">{filteredFresh.reduce((sum, item) => sum + item.cases, 0)}</div>
+          <div className="kpi-subtext">₹ {(freshTotal / 10000000).toFixed(2)}Cr</div>
+        </div>
+        
+        <div className="kpi-card">
+          <div className="kpi-label">Repeat Cases</div>
+          <div className="kpi-value">{filteredRepeat.reduce((sum, item) => sum + item.cases, 0)}</div>
+          <div className="kpi-subtext">₹ {(repeatTotal / 10000000).toFixed(2)}Cr</div>
+        </div>
+        
+        <div className="kpi-card kpi-highlight">
+          <div className="kpi-label">Total Collection</div>
+          <div className="kpi-value">₹ {(overallReceivedAmount / 10000000).toFixed(2)}Cr</div>
+          <div className="kpi-subtext">{overallReceivedPercent.toFixed(1)}% Recovery</div>
+        </div>
+        
+        <div className="kpi-card">
+          <div className="kpi-label">Active Executives</div>
+          <div className="kpi-value">{visibleData.length}</div>
+          <div className="kpi-subtext">Total in View</div>
+        </div>
+      </div>
+
       {renderTargetCard()}
 
       <div className={`split-layout ${filtersCollapsed ? "filters-collapsed" : ""}`}>
@@ -1541,3 +1572,5 @@ const renderTargetCard = () => (
 }
 
 export default App;
+
+
