@@ -424,16 +424,26 @@ p {
   white-space: nowrap;
 }
 
-.apply-button {
+.filter-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
   margin-top: 14px;
+}
+
+.apply-button,
+.cancel-button {
   padding: 14px 22px;
   border: none;
   border-radius: 16px;
-  background: linear-gradient(135deg, #1ea7ff, #06b6d4);
-  color: #fff;
   font-weight: 700;
   cursor: pointer;
   transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.apply-button {
+  background: linear-gradient(135deg, #1ea7ff, #06b6d4);
+  color: #fff;
 }
 
 .apply-button:hover {
@@ -444,6 +454,17 @@ p {
     #1ea7ff
   );
   box-shadow: 0 8px 20px rgba(0, 74, 173, 0.35);
+}
+
+.cancel-button {
+  background: #f87171;
+  color: #fff;
+  box-shadow: inset 0 0 0 1px rgba(248, 113, 113, 0.3);
+}
+
+.cancel-button:hover {
+  transform: translateY(-2px);
+  background: #ef4444;
 }
 
 .filter-box h3,

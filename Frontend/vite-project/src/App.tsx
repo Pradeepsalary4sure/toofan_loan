@@ -104,6 +104,16 @@ const applyDateRange = () => {
   setMonth("All");
 };
 
+const resetFilters = () => {
+  setSearchTerm("");
+  setMonth("All");
+  setDateFrom("");
+  setDateTo("");
+  setAppliedFrom("");
+  setAppliedTo("");
+  setViewMode("All");
+};
+
 const filteredFresh = fresh.filter((item) =>
   item.name.toLowerCase().includes(searchTerm.toLowerCase())
 );
@@ -758,13 +768,22 @@ const renderTargetCard = () => (
                       onChange={(e) => setDateTo(e.target.value)}
                     />
                   </div>
-                  <button
-                    type="button"
-                    className="apply-button"
-                    onClick={applyDateRange}
-                  >
-                    Apply
-                  </button>
+                  <div className="filter-actions">
+                    <button
+                      type="button"
+                      className="apply-button"
+                      onClick={applyDateRange}
+                    >
+                      Apply
+                    </button>
+                    <button
+                      type="button"
+                      className="cancel-button"
+                      onClick={resetFilters}
+                    >
+                      Clear Filters
+                    </button>
+                  </div>
                 </label>
 
                 <label>
