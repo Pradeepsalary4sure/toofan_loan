@@ -805,7 +805,6 @@
 
 
 import "./App.css";
-import buttonIcon from "./assets/hero.png";
 import heroImage from "./assets/image.png";
 import bankLogo from "./assets/image.png";
 import axios from "axios";
