@@ -817,8 +817,8 @@ const API_BASE_URL = import.meta.env.DEV
 
 const MIN_DISBURSE_DATE = "2025-10-25";
 const MAX_DISBURSE_DATE = "2030-12-31";
-const FRESH_TARGET = 11 * 10000000;
-const REPEAT_TARGET = 11 * 10000000;
+const FRESH_TARGET = 12.5 * 10000000;
+const REPEAT_TARGET = 12.5 * 10000000;
 
 // ============================
 // HARDCODED CREDENTIALS (Demo)
